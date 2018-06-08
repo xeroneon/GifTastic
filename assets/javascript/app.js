@@ -68,7 +68,7 @@ $(document).ready(function () {
 
     $("body").on("click", ".button", function () {
         searchTerm = "?tag=" + $(this).text();
-        giphyApi = "http://api.giphy.com/v1/gifs/random" + searchTerm + giphyApiKey;
+        giphyApi = "https://api.giphy.com/v1/gifs/random" + searchTerm + giphyApiKey;
         console.log(searchTerm);
         search();
     })
