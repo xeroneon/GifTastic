@@ -66,7 +66,7 @@ $(document).ready(function () {
         }
     }
 
-    $("body").on("click", ".button", function() {
+    $("body").on("click", ".button", function () {
         searchTerm = "?tag=" + $(this).text();
         giphyApi = "http://api.giphy.com/v1/gifs/random" + searchTerm + giphyApiKey;
         console.log(searchTerm);
@@ -102,11 +102,13 @@ $(document).ready(function () {
         }
     }
 
-    $("#submit").on("click", function() {
-        topics.push($("#add-topic").val());
-        $("#add-topic").val("");
-        M.updateTextFields();
-        createButtons();
+    $("#submit").on("click", function () {
+        if ($("#add-topic").val()) {
+            topics.push($("#add-topic").val());
+            $("#add-topic").val("");
+            M.updateTextFields();
+            createButtons();
+        }
     })
 
     search();
