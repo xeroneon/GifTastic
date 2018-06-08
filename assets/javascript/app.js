@@ -6,7 +6,7 @@ $(document).ready(function () {
 
     var searchTerm = "?tag=" + "duck";
 
-    var giphyApi = "http://api.giphy.com/v1/gifs/random" + searchTerm + giphyApiKey;
+    var giphyApi = "https://api.giphy.com/v1/gifs/random" + searchTerm + giphyApiKey;
 
     var gif;
 
