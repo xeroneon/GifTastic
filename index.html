@@ -22,30 +22,36 @@
 </head>
 
 <body>
-    <div class="row buttonContainer black">
+    <div class="row buttonContainer teal darken-1">
         <div class="col s12 white-text">
             <h4>Search Terms</h4>
             <div class="row">
-                <div class="input-field col s6">
+                <div class="input-field col s11 l5">
                     <input id="add-topic" type="text" class="validate white-text">
                     <label for="add_topic">Add Topic</label>
                 </div>
+                <div class="col s1 l1">
+                    <button class="btn waves-effect waves-light" type="submit" name="action" id="submit">Add
+                        <!-- <i class="material-icons right">send</i> -->
+                    </button>
+
+                </div>
                 <!-- <a class="waves-effect waves-light btn" id="submit">Add</a> -->
-                <button class="btn waves-effect waves-light" type="submit" name="action" id="submit">Add
-                    <!-- <i class="material-icons right">send</i> -->
-                </button>
-            </div>
-            <div class="row">
-                <div class="col s6">
+                <div class="col s11 l5">
                     <form>
                         Quantity:
                         <input type="number" name="points" min="0" max="20" value="10" id="search-qty">
                     </form>
                 </div>
-                <!-- <a class="waves-effect waves-light btn" id="submit-qty">Add</a> -->
-                <button class="btn waves-effect waves-light" type="submit" name="action" id="submit-qty">Submit
-                    <!-- <i class="material-icons right">send</i> -->
-                </button>
+                <div class="col s1 l1">
+                    <!-- <a class="waves-effect waves-light btn" id="submit-qty">Add</a> -->
+                    <button class="btn waves-effect waves-light" type="submit" name="action" id="submit-qty">Submit
+                        <!-- <i class="material-icons right">send</i> -->
+                    </button>
+
+                </div>
+            </div>
+            <div class="row">
             </div>
             <div class="buttons"></div>
         </div>
