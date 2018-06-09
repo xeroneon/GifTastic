@@ -10,6 +10,8 @@ $(document).ready(function () {
 
     var gif;
 
+    var still;
+
     var gifTitle;
 
     var gifRating;
@@ -31,6 +33,9 @@ $(document).ready(function () {
         $(card).append(cardImage);
 
         var img = $("<img>").attr("src", gif);
+        img.attr("data-gif", gif);
+        img.attr("data-still", still);
+        img.attr("isStill", false);
         $(cardImage).append(img);
 
         var cardContent = $("<div>");
@@ -88,7 +93,8 @@ $(document).ready(function () {
 
                 // console.log(result);
 
-                gif = result.fixed_height_downsampled_url;
+                gif = result.images.downsized.url;
+                still = result.images.downsized_still.url;
                 gifRating = result.rating;
                 if (result.title) {
                     gifTitle = result.title;
@@ -103,6 +109,7 @@ $(document).ready(function () {
     }
 
     $("#submit").on("click", function () {
+        event.preventDefault();
         if ($("#add-topic").val()) {
             topics.push($("#add-topic").val());
             $("#add-topic").val("");
@@ -110,6 +117,25 @@ $(document).ready(function () {
             createButtons();
         }
     })
+
+    $("#submit-qty").on("click", function() {
+        event.preventDefault();
+        searchCount = $("#search-qty").val();
+        console.log(searchCount);
+        search();
+    })
+
+    $("body").on("click", "img", function () {
+        if ($(this).attr("isStill") === "false") {
+            $(this).attr("src", $(this).attr("data-still"));
+            $(this).attr("isStill", true);
+        } else {
+            $(this).attr("src", $(this).attr("data-gif"));
+            $(this).attr("isStill", "false");
+        }
+    })
+
+
 
     search();
 });
